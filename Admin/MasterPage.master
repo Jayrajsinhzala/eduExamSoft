@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<!-- General meta information -->
+	<title>eduExamSoft</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<!-- // General meta information -->
+	
+	
+	<!-- Load Javascript -->
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.query-2.1.7.js"></script>
+	<script type="text/javascript" src="./js/rainbows.js"></script>
+	<!-- // Load Javascipt -->
+
+	<!-- Load stylesheets -->
+	<link type="text/css" rel="stylesheet" href="./css/style.css" media="screen" />
+	<!-- // Load stylesheets -->
+	
+<script>
+
+
+    $(document).ready(function () {
+
+        $("#submit1").hover(
+        function () {
+            $(this).animate({ "opacity": "0" }, "slow");
+        },
+        function () {
+            $(this).animate({ "opacity": "1" }, "slow");
+        });
+    });
+
+
+</script>
+	
+</head>
+<body>
+
+	<form id="form1" runat="server">
+
+	<div id="wrapper">
+	
+	    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+	
+	</div>
+
+    </form>
+
+</body>
+</html>

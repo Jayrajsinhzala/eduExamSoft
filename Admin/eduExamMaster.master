@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="eduExamMaster.master.cs" Inherits="eduExamMaster" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!--
+RoundedCorner  website theme by Abdussamad Abdurrazzaq
+
+http://websitetheme.com
+http://abdussamad.com
+
+ -->
+<title>
+eduExamSoft
+</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body>
+    
+<div id="banner_lc">
+<div id="banner_rc">
+<div id="banner_tc">
+<div id="banner_bc">	
+<div id="banner_bl">
+<div id="banner_br">
+<div id="banner_tl">
+<div id="banner_tr">
+<div id="banner">
+    <h1><a class="homelink1" href="#">eduExamSoft</a></h1>
+    <h2><a class="homelink2" href="#">thinking learning and educating</a></h2>
+</div>
+ <div id="top_nav">
+    <a href="AdminControlPanal.aspx">Home</a>
+    <a href="ViewExam.aspx">Exam</a>
+    <a href="ChangePassword.aspx">Change Password</a>
+
+    <a href="ViewQuestionBank.aspx">Question Bank</a>
+    <a href="#">About</a>
+    <a href="LoginNew.aspx">Logout</a>
+      </div>
+
+
+</div></div></div></div></div></div></div></div>
+
+
+<div >
+
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    </div>		
+<%--<div class="credit_footer">
+This website theme courtesy of <a href="http://websitetheme.com"> WebsiteTheme.com</a>
+</div>--%>
+    
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b114d276ab8427cbba92d0aa0e27342" Name="Diagram1" ZoomLevel="45">
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Employee_Subject" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Exam_Question" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Exam_Unit" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Question_Option" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Question_Type" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Semester" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Subject_Master" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Subject_Semester" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Unit" Width="1.5" PointX="11" PointY="1.5" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.SubjectView" Width="1.5" PointX="10.875" PointY="5.375" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Employee_Master" Width="1.5" PointX="0.625" PointY="1.125" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Student_Master" Width="1.5" PointX="4.625" PointY="6.375" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Exam_Master" Width="1.5" PointX="2.5" PointY="3.25" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.ViewExamUnit" Width="1.5" PointX="0.5" PointY="5.75" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Login_Master" Width="1.5" PointX="6.875" PointY="0.625" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.ViewQuestion" Width="1.5" PointX="10.875" PointY="8.25" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.ViewExamQuestion" Width="1.5" PointX="12.875" PointY="1.75" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Question_Bank" Width="1.5" PointX="6.625" PointY="4.875" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.View_Exam_Question_Option" Width="1.5" PointX="12.75" PointY="4.25" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.ViewSemester" Width="1.5" PointX="14.625" PointY="1.5" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.Result" Width="1.5" PointX="8.625" PointY="0.875" />
+        <EntityTypeShape EntityType="eduExamSoftDBModel.ViewStudent_Result" Width="1.5" PointX="14.625" PointY="4.25" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="eduExamSoftDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="eduExamSoftDBModelStoreContainer">
+          <EntitySet Name="Employee_Master" EntityType="eduExamSoftDBModel.Store.Employee_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee_Subject" EntityType="eduExamSoftDBModel.Store.Employee_Subject" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Exam_Master" EntityType="eduExamSoftDBModel.Store.Exam_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Exam_Question" EntityType="eduExamSoftDBModel.Store.Exam_Question" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Exam_Unit" EntityType="eduExamSoftDBModel.Store.Exam_Unit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Login_Master" EntityType="eduExamSoftDBModel.Store.Login_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Question_Bank" EntityType="eduExamSoftDBModel.Store.Question_Bank" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Question_Option" EntityType="eduExamSoftDBModel.Store.Question_Option" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Question_Type" EntityType="eduExamSoftDBModel.Store.Question_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Result" EntityType="eduExamSoftDBModel.Store.Result" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Semester" EntityType="eduExamSoftDBModel.Store.Semester" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Student_Master" EntityType="eduExamSoftDBModel.Store.Student_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Subject_Master" EntityType="eduExamSoftDBModel.Store.Subject_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Subject_Semester" EntityType="eduExamSoftDBModel.Store.Subject_Semester" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Unit" EntityType="eduExamSoftDBModel.Store.Unit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubjectView" EntityType="eduExamSoftDBModel.Store.SubjectView" store:Type="Views" store:Schema="dbo" store:Name="SubjectView">
+            <DefiningQuery>SELECT 
+      [SubjectView].[Sub_Id] AS [Sub_Id], 
+      [SubjectView].[Sub_Description] AS [Sub_Description], 
+      [SubjectView].[D_O_E] AS [D_O_E], 
+      [SubjectView].[D_O_M] AS [D_O_M], 
+      [SubjectView].[IsDeleted] AS [IsDeleted]
+      FROM [dbo].[SubjectView] AS [SubjectView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Exam_Question_Option" EntityType="eduExamSoftDBModel.Store.View_Exam_Question_Option" store:Type="Views" store:Schema="dbo" store:Name="View_Exam_Question_Option">
+            <DefiningQuery>SELECT 
+      [View_Exam_Question_Option].[Exam_Id] AS [Exam_Id], 
+      [View_Exam_Question_Option].[Question] AS [Question], 
+      [View_Exam_Question_Option].[Type_Name] AS [Type_Name], 
+      [View_Exam_Question_Option].[Option_Description] AS [Option_Description], 
+      [View_Exam_Question_Option].[Option_Id] AS [Option_Id], 
+      [View_Exam_Question_Option].[IsTrue] AS [IsTrue], 
+      [View_Exam_Question_Option].[Question_Id] AS [Question_Id]
+      FROM [dbo].[View_Exam_Question_Option] AS [View_Exam_Question_Option]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewExamQuestion" EntityType="eduExamSoftDBModel.Store.ViewExamQuestion" store:Type="Views" store:Schema="dbo" store:Name="ViewExamQuestion">
+            <DefiningQuery>SELECT 
+      [ViewExamQuestion].[Question_Id] AS [Question_Id], 
+      [ViewExamQuestion].[Question] AS [Question], 
+      [ViewExamQuestion].[Exam_Name] AS [Exam_Name], 
+      [ViewExamQuestion].[Duration] AS [Duration], 
+      [ViewExamQuestion].[Exam_Id] AS [Exam_Id]
+      FROM [dbo].[ViewExamQuestion] AS [ViewExamQuestion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewExamUnit" EntityType="eduExamSoftDBModel.Store.ViewExamUnit" store:Type="Views" store:Schema="dbo" store:Name="ViewExamUnit">
+            <DefiningQuery>SELECT 
+      [ViewExamUnit].[Exam_Id] AS [Exam_Id], 
+      [ViewExamUnit].[Exam_Name] AS [Exam_Name], 
+      [ViewExamUnit].[Unit_Id] AS [Unit_Id], 
+      [ViewExamUnit].[Unit_Name] AS [Unit_Name]
+      FROM [dbo].[ViewExamUnit] AS [ViewExamUnit]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewQuestion" EntityType="eduExamSoftDBModel.Store.ViewQuestion" store:Type="Views" store:Schema="dbo" store:Name="ViewQuestion">
+            <DefiningQuery>SELECT 
+      [ViewQuestion].[Question_Id] AS [Question_Id], 
+      [ViewQuestion].[Question_Type_Id] AS [Question_Type_Id], 
+      [ViewQuestion].[Question] AS [Question], 
+      [ViewQuestion].[D_O_E] AS [D_O_E], 
+      [ViewQuestion].[D_O_M] AS [D_O_M], 
+      [ViewQuestion].[Emp_Id] AS [Emp_Id], 
+      [ViewQuestion].[Unit_Id] AS [Unit_Id], 
+      [ViewQuestion].[IsDeleted] AS [IsDeleted]
+      FROM [dbo].[ViewQuestion] AS [ViewQuestion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewSemester" EntityType="eduExamSoftDBModel.Store.ViewSemester" store:Type="Views" store:Schema="dbo" store:Name="ViewSemester">
+            <DefiningQuery>SELECT 
+      [ViewSemester].[Sem_Id] AS [Sem_Id], 
+      [ViewSemester].[Sem_Description] AS [Sem_Description], 
+      [ViewSemester].[D_O_E] AS [D_O_E], 
+      [ViewSemester].[D_O_M] AS [D_O_M], 
+      [ViewSemester].[IsDeleted] AS [IsDeleted]
+      FROM [dbo].[ViewSemester] AS [ViewSemester]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewStudent_Result" EntityType="eduExamSoftDBModel.Store.ViewStudent_Result" store:Type="Views" store:Schema="dbo" store:Name="ViewStudent_Result">
+            <DefiningQuery>SELECT 
+      [ViewStudent_Result].[Result_Id] AS [Result_Id], 
+      [ViewStudent_Result].[Exam_Name] AS [Exam_Name], 
+      [ViewStudent_Result].[N_O_Q] AS [N_O_Q], 
+      [ViewStudent_Result].[N_C_A] AS [N_C_A], 
+      [ViewStudent_Result].[N_W_A] AS [N_W_A], 
+      [ViewStudent_Result].[Total_Score] AS [Total_Score], 
+      [ViewStudent_Result].[D_O_E] AS [D_O_E], 
+      [ViewStudent_Result].[Stu_Name] AS [Stu_Name], 
+      [ViewStudent_Result].[Email_Id] AS [Email_Id], 
+      [ViewStudent_Result].[Stu_Id] AS [Stu_Id], 
+      [ViewStudent_Result].[Exam_Id] AS [Exam_Id]
+      FROM [dbo].[ViewStudent_Result] AS [ViewStudent_Result]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="Employee_Master">
+          <Key>
+            <PropertyRef Name="Emp_Id" />
+          </Key>
+          <Property Name="Emp_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_Name" Type="varchar" MaxLength="50" />
+          <Property Name="D_O_B" Type="date" />
+          <Property Name="Age" Type="numeric" />
+          <Property Name="City" Type="varchar" MaxLength="30" />
+          <Property Name="State" Type="varchar" MaxLength="30" />
+          <Property Name="Emp_Designation" Type="varchar" MaxLength="50" />
+          <Property Name="D_O_J" Type="date" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="Contact_Number" Type="varchar" MaxLength="10" />
+          <Property Name="Email_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Emp_Image" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Employee_Subject">
+          <Key>
+            <PropertyRef Name="Emp_Sub_Id" />
+          </Key>
+          <Property Name="Emp_Sub_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_Id" Type="numeric" />
+          <Property Name="Sub_Id" Type="numeric" />
+        </EntityType>
+        <EntityType Name="Exam_Master">
+          <Key>
+            <PropertyRef Name="Exam_Id" />
+          </Key>
+          <Property Name="Exam_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Exam_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Duration" Type="numeric" />
+          <Property Name="N_O_Q" Type="numeric" />
+          <Property Name="Date_Of_Exam" Type="date" />
+          <Property Name="Allow_Practice" Type="bit" />
+          <Property Name="Mode" Type="varchar" MaxLength="10" />
+          <Property Name="Sub_Id" Type="numeric" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsLocked" Type="bit" />
+        </EntityType>
+        <EntityType Name="Exam_Question">
+          <Key>
+            <PropertyRef Name="Exam_Question_Id" />
+          </Key>
+          <Property Name="Exam_Question_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Exam_Id" Type="numeric" />
+          <Property Name="Question_Id" Type="numeric" />
+        </EntityType>
+        <EntityType Name="Exam_Unit">
+          <Key>
+            <PropertyRef Name="Exam_Unit_Id" />
+          </Key>
+          <Property Name="Exam_Unit_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Exam_Id" Type="numeric" />
+          <Property Name="Unit_Id" Type="numeric" />
+        </EntityType>
+        <EntityType Name="Login_Master">
+          <Key>
+            <PropertyRef Name="Login_Id" />
+          </Key>
+          <Property Name="Login_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Login_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Login_Type" Type="varchar" MaxLength="20" />
+          <Property Name="Login_Password" Type="varchar" MaxLength="20" />
+          <Property Name="Emd_Id" Type="numeric" />
+          <Property Name="Stu_Id" Type="numeric" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="Security_Question" Type="varchar" MaxLength="150" />
+          <Property Name="Security_Answer" Type="varchar" MaxLength="150" />
+          <Property Name="Otp" Type="varchar" MaxLength="20" />
+          <Property Name="IsOtpGenrate" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Question_Bank">
+          <Key>
+            <PropertyRef Name="Question_Id" />
+          </Key>
+          <Property Name="Question_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="varchar" MaxLength="150" />
+          <Property Name="Question_Type_Id" Type="numeric" />
+          <Property Name="Emp_Id" Type="numeric" />
+          <Property Name="Unit_Id" Type="numeric" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Question_Option">
+          <Key>
+            <PropertyRef Name="Option_Id" />
+          </Key>
+          <Property Name="Option_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Question_Id" Type="numeric" />
+          <Property Name="Option_Description" Type="varchar" MaxLength="50" />
+          <Property Name="IsTrue" Type="bit" />
+        </EntityType>
+        <EntityType Name="Question_Type">
+          <Key>
+            <PropertyRef Name="Question_Type_Id" />
+          </Key>
+          <Property Name="Question_Type_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type_Name" Type="varchar" MaxLength="50" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Result_Id" />
+          </Key>
+          <Property Name="Result_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Stu_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Exam_Name" Type="varchar" MaxLength="50" />
+          <Property Name="N_O_Q" Type="numeric" />
+          <Property Name="N_C_A" Type="numeric" />
+          <Property Name="N_W_A" Type="numeric" />
+          <Property Name="Total_Score" Type="numeric" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+        </EntityType>
+        <EntityType Name="Semester">
+          <Key>
+            <PropertyRef Name="Sem_Id" />
+          </Key>
+          <Property Name="Sem_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sem_Description" Type="varchar" MaxLength="100" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Student_Master">
+          <Key>
+            <PropertyRef Name="Stu_Id" />
+          </Key>
+          <Property Name="Stu_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Stu_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Contact_Number" Type="varchar" MaxLength="10" />
+          <Property Name="Gender" Type="varchar" MaxLength="15" />
+          <Property Name="City" Type="varchar" MaxLength="20" />
+          <Property Name="State" Type="varchar" MaxLength="20" />
+          <Property Name="D_O_B" Type="date" />
+          <Property Name="Age" Type="numeric" />
+          <Property Name="Email_Id" Type="varchar" MaxLength="50" />
+          <Property Name="Parents_ContactNo" Type="varchar" MaxLength="10" />
+          <Property Name="Parents_EmailId" Type="varchar" MaxLength="50" />
+          <Property Name="D_O_J" Type="date" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="Stu_Image" Type="varchar" MaxLength="100" />
+          <Property Name="Sem_Id" Type="numeric" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Subject_Master">
+          <Key>
+            <PropertyRef Name="Sub_Id" />
+          </Key>
+          <Property Name="Sub_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_Description" Type="varchar" MaxLength="100" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Subject_Semester">
+          <Key>
+            <PropertyRef Name="SubSem_Id" />
+          </Key>
+          <Property Name="SubSem_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_Id" Type="numeric" />
+          <Property Name="Sem_Id" Type="numeric" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Unit_Id" />
+          </Key>
+          <Property Name="Unit_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Unit_Name" Type="varchar" MaxLength="50" />
+          <Property Name="SubSem_Id" Type="numeric" />
+          <Property Name="Unit_Description" Type="varchar" MaxLength="50" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\SEM6\PROJECT\BACKUP\EDUEXAM__WITHTIMER_EXAM\APP_DATA\EDUEXAMSOFTDB.MDF.dbo.SubjectView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SubjectView">
+          <Key>
+            <PropertyRef Name="Sub_Id" />
+          </Key>
+          <Property Name="Sub_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_Description" Type="varchar" MaxLength="100" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\SEM6\PROJECT\BACKUP\EDUEXAM__WITHTIMER_EXAM\APP_DATA\EDUEXAMSOFTDB.MDF.dbo.View_Exam_Question_Option' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="View_Exam_Question_Option">
+          <Key>
+            <PropertyRef Name="Exam_Id" />
+            <PropertyRef Name="Option_Id" />
+            <PropertyRef Name="Question_Id" />
+          </Key>
+          <Property Name="Exam_Id" Type="numeric" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="150" />
+          <Property Name="Type_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Option_Description" Type="varchar" MaxLength="50" />
+          <Property Name="Option_Id" Type="numeric" Nullable="false" />
+          <Property Name="IsTrue" Type="bit" />
+          <Property Name="Question_Id" Type="numeric" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\SEM6\PROJECT\BACKUP\EDUEXAM__WITHTIMER_EXAM\APP_DATA\EDUEXAMSOFTDB.MDF.dbo.ViewExamQuestion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewExamQuestion">
+          <Key>
+            <PropertyRef Name="Question_Id" />
+            <PropertyRef Name="Exam_Id" />
+          </Key>
+          <Property Name="Question_Id" Type="numeric" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="150" />
+          <Property Name="Exam_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Duration" Type="numeric" />
+          <Property Name="Exam_Id" Type="numeric" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\SEM6\PROJECT\BACKUP\EDUEXAM__WITHTIMER_EXAM\APP_DATA\EDUEXAMSOFTDB.MDF.dbo.ViewExamUnit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewExamUnit">
+          <Key>
+            <PropertyRef Name="Exam_Id" />
+            <PropertyRef Name="Unit_Id" />
+          </Key>
+          <Property Name="Exam_Id" Type="numeric" Nullable="false" />
+          <Property Name="Exam_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Unit_Id" Type="numeric" Nullable="false" />
+          <Property Name="Unit_Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\SEM6\PROJECT\BACKUP\EDUEXAM__WITHTIMER_EXAM\APP_DATA\EDUEXAMSOFTDB.MDF.dbo.ViewQuestion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewQuestion">
+          <Key>
+            <PropertyRef Name="Question_Id" />
+          </Key>
+          <Property Name="Question_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Question_Type_Id" Type="numeric" />
+          <Property Name="Question" Type="varchar" MaxLength="50" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="Emp_Id" Type="numeric" />
+          <Property Name="Unit_Id" Type="numeric" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\SEM6\PROJECT\BACKUP\EDUEXAM__WITHTIMER_EXAM\APP_DATA\EDUEXAMSOFTDB.MDF.dbo.ViewSemester' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewSemester">
+          <Key>
+            <PropertyRef Name="Sem_Id" />
+          </Key>
+          <Property Name="Sem_Id" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Sem_Description" Type="varchar" MaxLength="100" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="D_O_M" Type="date" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\SEM6\PROJECT\BACKUP\EDUEXAM__WITHTIMER_EXAM\APP_DATA\EDUEXAMSOFTDB.MDF.dbo.ViewStudent_Result' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ViewStudent_Result">
+          <Key>
+            <PropertyRef Name="Result_Id" />
+            <PropertyRef Name="Stu_Id" />
+            <PropertyRef Name="Exam_Id" />
+          </Key>
+          <Property Name="Result_Id" Type="numeric" Nullable="false" />
+          <Property Name="Exam_Name" Type="varchar" MaxLength="50" />
+          <Property Name="N_O_Q" Type="numeric" />
+          <Property Name="N_C_A" Type="numeric" />
+          <Property Name="N_W_A" Type="numeric" />
+          <Property Name="Total_Score" Type="numeric" />
+          <Property Name="D_O_E" Type="date" />
+          <Property Name="Stu_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email_Id" Type="varchar" MaxLength="50" />
+          <Property Name="Stu_Id" Type="numeric" Nullable="false" />
+          <Property Name="Exam_Id" Type="numeric" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eduExamSoftDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="eduExamSoftDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Employee_Subject" EntityType="eduExamSoftDBModel.Employee_Subject" />
+          <EntitySet Name="Exam_Question" EntityType="eduExamSoftDBModel.Exam_Question" />
+          <EntitySet Name="Exam_Unit" EntityType="eduExamSoftDBModel.Exam_Unit" />
+          <EntitySet Name="Question_Option" EntityType="eduExamSoftDBModel.Question_Option" />
+          <EntitySet Name="Question_Type" EntityType="eduExamSoftDBModel.Question_Type" />
+          <EntitySet Name="Semesters" EntityType="eduExamSoftDBModel.Semester" />
+          <EntitySet Name="Subject_Master" EntityType="eduExamSoftDBModel.Subject_Master" />
+          <EntitySet Name="Subject_Semester" EntityType="eduExamSoftDBModel.Subject_Semester" />
+          <EntitySet Name="Units" EntityType="eduExamSoftDBModel.Unit" />
+          <EntitySet Name="SubjectViews" EntityType="eduExamSoftDBModel.SubjectView" />
+          <EntitySet Name="Employee_Master" EntityType="eduExamSoftDBModel.Employee_Master" />
+          <EntitySet Name="Student_Master" EntityType="eduExamSoftDBModel.Student_Master" />
+          <EntitySet Name="Exam_Master" EntityType="eduExamSoftDBModel.Exam_Master" />
+          <EntitySet Name="ViewExamUnits" EntityType="eduExamSoftDBModel.ViewExamUnit" />
+          <EntitySet Name="Login_Master" EntityType="eduExamSoftDBModel.Login_Master" />
+          <EntitySet Name="ViewQuestions" EntityType="eduExamSoftDBModel.ViewQuestion" />
+          <EntitySet Name="ViewExamQuestions" EntityType="eduExamSoftDBModel.ViewExamQuestion" />
+          <EntitySet Name="Question_Bank" EntityType="eduExamSoftDBModel.Question_Bank" />
+          <EntitySet Name="View_Exam_Question_Option" EntityType="eduExamSoftDBModel.View_Exam_Question_Option" />
+          <EntitySet Name="ViewSemesters" EntityType="eduExamSoftDBModel.ViewSemester" />
+          <EntitySet Name="Results" EntityType="eduExamSoftDBModel.Result" />
+          <EntitySet Name="ViewStudent_Result" EntityType="eduExamSoftDBModel.ViewStudent_Result" />
+        </EntityContainer>
+        <EntityType Name="Employee_Subject">
+          <Key>
+            <PropertyRef Name="Emp_Sub_Id" />
+          </Key>
+          <Property Name="Emp_Sub_Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Sub_Id" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Exam_Question">
+          <Key>
+            <PropertyRef Name="Exam_Question_Id" />
+          </Key>
+          <Property Name="Exam_Question_Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Exam_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Question_Id" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Exam_Unit">
+          <Key>
+            <PropertyRef Name="Exam_Unit_Id" />
+          </Key>
+          <Property Name="Exam_Unit_Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Exam_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Unit_Id" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Question_Option">
+          <Key>
+            <PropertyRef Name="Option_Id" />
+          </Key>
+          <Property Name="Option_Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Question_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Option_Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IsTrue" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Question_Type">
+          <Key>
+            <PropertyRef Name="Question_Type_Id" />
+          </Key>
+          <Property Name="Question_Type_Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Type_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="D_O_E" Type="DateTime" Precision="0" />
+          <Property Name="D_O_M" Type="DateTime" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Semester">
+          <Key>
+            <PropertyRef Name="Sem_Id" />
+          </Key>
+          <Property Name="Sem_Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Sem_Description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="D_O_E" Type="DateTime" Precision="0" />
+          <Property Name="D_O_M" Type="DateTime" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Subject_Master">
+          <Key>
+            <PropertyRef Name="Sub_Id" />
+          </Key>
+          <Property Name="Sub_Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_Description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="D_O_E" Type="DateTime" Precision="0" />
+          <Property Name="D_O_M" Type="DateTime" Precision="0" />
+          <Property Name="IsDeleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Subject_Semester">
+          <Key>
+            <PropertyRef Name="SubSem_Id" />
+          </Key>
+          <Property Name="SubSem_Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Sem_Id" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Unit_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Unit_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Unit_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="SubSem_Id" Precision="18" Scale="0" />
+          <Property Type="String" Name="Unit_Description" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="Boolean" Name="IsDeleted" />
+        </EntityType>
+        <EntityType Name="SubjectView">
+          <Key>
+            <PropertyRef Name="Sub_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Sub_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Sub_Description" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="Boolean" Name="IsDeleted" />
+        </EntityType>
+        <EntityType Name="Employee_Master">
+          <Key>
+            <PropertyRef Name="Emp_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Emp_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Emp_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="D_O_B" Precision="0" />
+          <Property Type="Decimal" Name="Age" Precision="18" Scale="0" />
+          <Property Type="String" Name="City" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Emp_Designation" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="D_O_J" Precision="0" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="String" Name="Contact_Number" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email_ID" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gender" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsDeleted" />
+          <Property Type="String" Name="Emp_Image" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Student_Master">
+          <Key>
+            <PropertyRef Name="Stu_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Stu_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Stu_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Contact_Number" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gender" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="D_O_B" Precision="0" />
+          <Property Type="Decimal" Name="Age" Precision="18" Scale="0" />
+          <Property Type="String" Name="Email_Id" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Parents_ContactNo" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Parents_EmailId" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="D_O_J" Precision="0" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="String" Name="Stu_Image" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Sem_Id" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="IsDeleted" />
+        </EntityType>
+        <EntityType Name="Exam_Master">
+          <Key>
+            <PropertyRef Name="Exam_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Exam_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Exam_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Duration" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="N_O_Q" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="Date_Of_Exam" Precision="0" />
+          <Property Type="Boolean" Name="Allow_Practice" />
+          <Property Type="String" Name="Mode" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Sub_Id" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="Boolean" Name="IsDeleted" />
+          <Property Type="Boolean" Name="IsLocked" />
+        </EntityType>
+        <EntityType Name="ViewExamUnit">
+          <Key>
+            <PropertyRef Name="Exam_Id" />
+            <PropertyRef Name="Unit_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Exam_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Exam_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Unit_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Unit_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Login_Master">
+          <Key>
+            <PropertyRef Name="Login_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Login_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Login_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Login_Type" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Login_Password" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Emd_Id" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Stu_Id" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="String" Name="Security_Question" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Security_Answer" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Otp" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsOtpGenrate" />
+          <Property Type="Boolean" Name="IsDeleted" />
+        </EntityType>
+        <EntityType Name="ViewQuestion">
+          <Key>
+            <PropertyRef Name="Question_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Question_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="Question_Type_Id" Precision="18" Scale="0" />
+          <Property Type="String" Name="Question" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="Decimal" Name="Emp_Id" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Unit_Id" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="IsDeleted" />
+        </EntityType>
+        <EntityType Name="ViewExamQuestion">
+          <Key>
+            <PropertyRef Name="Question_Id" />
+            <PropertyRef Name="Exam_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Question_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Question" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Exam_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Exam_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Duration" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Question_Bank">
+          <Key>
+            <PropertyRef Name="Question_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Question_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Question" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Question_Type_Id" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Emp_Id" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Unit_Id" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="Boolean" Name="IsDeleted" />
+        </EntityType>
+        <EntityType Name="View_Exam_Question_Option">
+          <Key>
+            <PropertyRef Name="Exam_Id" />
+            <PropertyRef Name="Option_Id" />
+            <PropertyRef Name="Question_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Exam_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Question" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Option_Description" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Option_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="IsTrue" />
+          <Property Type="Decimal" Name="Question_Id" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="ViewSemester">
+          <Key>
+            <PropertyRef Name="Sem_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Sem_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Sem_Description" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+          <Property Type="Boolean" Name="IsDeleted" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Result_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Result_Id" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Stu_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Exam_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="N_O_Q" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="N_C_A" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="N_W_A" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Total_Score" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="DateTime" Name="D_O_M" Precision="0" />
+        </EntityType>
+        <EntityType Name="ViewStudent_Result">
+          <Key>
+            <PropertyRef Name="Result_Id" />
+            <PropertyRef Name="Stu_Id" />
+            <PropertyRef Name="Exam_Id" />
+          </Key>
+          <Property Type="Decimal" Name="Result_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Exam_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="N_O_Q" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="N_C_A" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="N_W_A" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Total_Score" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="D_O_E" Precision="0" />
+          <Property Type="String" Name="Stu_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email_Id" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Stu_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Exam_Id" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eduExamSoftDBModelStoreContainer" CdmEntityContainer="eduExamSoftDBEntities">
+          <EntitySetMapping Name="Employee_Subject">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Employee_Subject">
+              <MappingFragment StoreEntitySet="Employee_Subject">
+                <ScalarProperty Name="Emp_Sub_Id" ColumnName="Emp_Sub_Id" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Sub_Id" ColumnName="Sub_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exam_Question">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Exam_Question">
+              <MappingFragment StoreEntitySet="Exam_Question">
+                <ScalarProperty Name="Exam_Question_Id" ColumnName="Exam_Question_Id" />
+                <ScalarProperty Name="Exam_Id" ColumnName="Exam_Id" />
+                <ScalarProperty Name="Question_Id" ColumnName="Question_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exam_Unit">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Exam_Unit">
+              <MappingFragment StoreEntitySet="Exam_Unit">
+                <ScalarProperty Name="Exam_Unit_Id" ColumnName="Exam_Unit_Id" />
+                <ScalarProperty Name="Exam_Id" ColumnName="Exam_Id" />
+                <ScalarProperty Name="Unit_Id" ColumnName="Unit_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question_Option">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Question_Option">
+              <MappingFragment StoreEntitySet="Question_Option">
+                <ScalarProperty Name="Option_Id" ColumnName="Option_Id" />
+                <ScalarProperty Name="Question_Id" ColumnName="Question_Id" />
+                <ScalarProperty Name="Option_Description" ColumnName="Option_Description" />
+                <ScalarProperty Name="IsTrue" ColumnName="IsTrue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question_Type">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Question_Type">
+              <MappingFragment StoreEntitySet="Question_Type">
+                <ScalarProperty Name="Question_Type_Id" ColumnName="Question_Type_Id" />
+                <ScalarProperty Name="Type_Name" ColumnName="Type_Name" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Semesters">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Semester">
+              <MappingFragment StoreEntitySet="Semester">
+                <ScalarProperty Name="Sem_Id" ColumnName="Sem_Id" />
+                <ScalarProperty Name="Sem_Description" ColumnName="Sem_Description" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subject_Master">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Subject_Master">
+              <MappingFragment StoreEntitySet="Subject_Master">
+                <ScalarProperty Name="Sub_Id" ColumnName="Sub_Id" />
+                <ScalarProperty Name="Sub_Description" ColumnName="Sub_Description" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subject_Semester">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Subject_Semester">
+              <MappingFragment StoreEntitySet="Subject_Semester">
+                <ScalarProperty Name="SubSem_Id" ColumnName="SubSem_Id" />
+                <ScalarProperty Name="Sub_Id" ColumnName="Sub_Id" />
+                <ScalarProperty Name="Sem_Id" ColumnName="Sem_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Unit_Description" ColumnName="Unit_Description" />
+                <ScalarProperty Name="SubSem_Id" ColumnName="SubSem_Id" />
+                <ScalarProperty Name="Unit_Name" ColumnName="Unit_Name" />
+                <ScalarProperty Name="Unit_Id" ColumnName="Unit_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubjectViews">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.SubjectView">
+              <MappingFragment StoreEntitySet="SubjectView">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Sub_Description" ColumnName="Sub_Description" />
+                <ScalarProperty Name="Sub_Id" ColumnName="Sub_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Master">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Employee_Master">
+              <MappingFragment StoreEntitySet="Employee_Master">
+                <ScalarProperty Name="Emp_Image" ColumnName="Emp_Image" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email_ID" ColumnName="Email_ID" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="D_O_J" ColumnName="D_O_J" />
+                <ScalarProperty Name="Emp_Designation" ColumnName="Emp_Designation" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="D_O_B" ColumnName="D_O_B" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student_Master">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Student_Master">
+              <MappingFragment StoreEntitySet="Student_Master">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Sem_Id" ColumnName="Sem_Id" />
+                <ScalarProperty Name="Stu_Image" ColumnName="Stu_Image" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="D_O_J" ColumnName="D_O_J" />
+                <ScalarProperty Name="Parents_EmailId" ColumnName="Parents_EmailId" />
+                <ScalarProperty Name="Parents_ContactNo" ColumnName="Parents_ContactNo" />
+                <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="D_O_B" ColumnName="D_O_B" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+                <ScalarProperty Name="Stu_Name" ColumnName="Stu_Name" />
+                <ScalarProperty Name="Stu_Id" ColumnName="Stu_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exam_Master">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Exam_Master">
+              <MappingFragment StoreEntitySet="Exam_Master">
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Sub_Id" ColumnName="Sub_Id" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="Allow_Practice" ColumnName="Allow_Practice" />
+                <ScalarProperty Name="Date_Of_Exam" ColumnName="Date_Of_Exam" />
+                <ScalarProperty Name="N_O_Q" ColumnName="N_O_Q" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Exam_Name" ColumnName="Exam_Name" />
+                <ScalarProperty Name="Exam_Id" ColumnName="Exam_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewExamUnits">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.ViewExamUnit">
+              <MappingFragment StoreEntitySet="ViewExamUnit">
+                <ScalarProperty Name="Unit_Name" ColumnName="Unit_Name" />
+                <ScalarProperty Name="Unit_Id" ColumnName="Unit_Id" />
+                <ScalarProperty Name="Exam_Name" ColumnName="Exam_Name" />
+                <ScalarProperty Name="Exam_Id" ColumnName="Exam_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Master">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Login_Master">
+              <MappingFragment StoreEntitySet="Login_Master">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsOtpGenrate" ColumnName="IsOtpGenrate" />
+                <ScalarProperty Name="Otp" ColumnName="Otp" />
+                <ScalarProperty Name="Security_Answer" ColumnName="Security_Answer" />
+                <ScalarProperty Name="Security_Question" ColumnName="Security_Question" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Stu_Id" ColumnName="Stu_Id" />
+                <ScalarProperty Name="Emd_Id" ColumnName="Emd_Id" />
+                <ScalarProperty Name="Login_Password" ColumnName="Login_Password" />
+                <ScalarProperty Name="Login_Type" ColumnName="Login_Type" />
+                <ScalarProperty Name="Login_Name" ColumnName="Login_Name" />
+                <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewQuestions">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.ViewQuestion">
+              <MappingFragment StoreEntitySet="ViewQuestion">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Unit_Id" ColumnName="Unit_Id" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Question_Type_Id" ColumnName="Question_Type_Id" />
+                <ScalarProperty Name="Question_Id" ColumnName="Question_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewExamQuestions">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.ViewExamQuestion">
+              <MappingFragment StoreEntitySet="ViewExamQuestion">
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Exam_Id" ColumnName="Exam_Id" />
+                <ScalarProperty Name="Exam_Name" ColumnName="Exam_Name" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Question_Id" ColumnName="Question_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question_Bank">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Question_Bank">
+              <MappingFragment StoreEntitySet="Question_Bank">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Unit_Id" ColumnName="Unit_Id" />
+                <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+                <ScalarProperty Name="Question_Type_Id" ColumnName="Question_Type_Id" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Question_Id" ColumnName="Question_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Exam_Question_Option">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.View_Exam_Question_Option">
+              <MappingFragment StoreEntitySet="View_Exam_Question_Option">
+                <ScalarProperty Name="Question_Id" ColumnName="Question_Id" />
+                <ScalarProperty Name="IsTrue" ColumnName="IsTrue" />
+                <ScalarProperty Name="Option_Id" ColumnName="Option_Id" />
+                <ScalarProperty Name="Option_Description" ColumnName="Option_Description" />
+                <ScalarProperty Name="Type_Name" ColumnName="Type_Name" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Exam_Id" ColumnName="Exam_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewSemesters">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.ViewSemester">
+              <MappingFragment StoreEntitySet="ViewSemester">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Sem_Description" ColumnName="Sem_Description" />
+                <ScalarProperty Name="Sem_Id" ColumnName="Sem_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="D_O_M" ColumnName="D_O_M" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Total_Score" ColumnName="Total_Score" />
+                <ScalarProperty Name="N_W_A" ColumnName="N_W_A" />
+                <ScalarProperty Name="N_C_A" ColumnName="N_C_A" />
+                <ScalarProperty Name="N_O_Q" ColumnName="N_O_Q" />
+                <ScalarProperty Name="Exam_Name" ColumnName="Exam_Name" />
+                <ScalarProperty Name="Stu_Name" ColumnName="Stu_Name" />
+                <ScalarProperty Name="Result_Id" ColumnName="Result_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewStudent_Result">
+            <EntityTypeMapping TypeName="eduExamSoftDBModel.ViewStudent_Result">
+              <MappingFragment StoreEntitySet="ViewStudent_Result">
+                <ScalarProperty Name="Exam_Id" ColumnName="Exam_Id" />
+                <ScalarProperty Name="Stu_Id" ColumnName="Stu_Id" />
+                <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+                <ScalarProperty Name="Stu_Name" ColumnName="Stu_Name" />
+                <ScalarProperty Name="D_O_E" ColumnName="D_O_E" />
+                <ScalarProperty Name="Total_Score" ColumnName="Total_Score" />
+                <ScalarProperty Name="N_W_A" ColumnName="N_W_A" />
+                <ScalarProperty Name="N_C_A" ColumnName="N_C_A" />
+                <ScalarProperty Name="N_O_Q" ColumnName="N_O_Q" />
+                <ScalarProperty Name="Exam_Name" ColumnName="Exam_Name" />
+                <ScalarProperty Name="Result_Id" ColumnName="Result_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
